@@ -124,3 +124,42 @@ ul>li{
 	box-shadow: 1px 1px 1px transparent, 1px 1px 0px transparent, 1px 1px 1px yellow, 2px 2px 1px transparent;
 	border-radius: 7px;
 }
+
+
+@media (max-width: 480px) {
+	#UserName{
+		display: none;
+	}
+  #txt {
+    width: 80vw;
+    height: 8vh;
+    font-size: 0.9rem;
+  }
+
+  #chatCenterPage{							/* Main chat interface */
+	height: 100%;
+	width: 100%;
+	border: 1px solid var(--border-purple);
+	position: sticky;
+	overflow: hidden;
+	top: 8%;
+}
+
+#chatCenterPage>ul{
+	height: 80%;
+	margin: 10px;
+	}
+
+  #TypeBox {
+    margin: 5px;
+  }
+
+  #sideNavbar{
+  	display: none;
+  }
+
+  .chatSession {
+    font-size: 0.9rem;
+    padding-left: 5px;
+  }
+}

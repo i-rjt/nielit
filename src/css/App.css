@@ -1,5 +1,6 @@
 #nav{
   display: flex;
+/*  flex-wrap: wrap;*/
 }
 
 #nav>div{
@@ -63,4 +64,67 @@ em:hover{
   content: " \1F3F4\200D\2620";
   color: black;
   cursor: pointer;
+}
+
+
+
+@media (max-width: 480px) {
+
+  #nav > div {
+    width: 90%;
+    text-align: center;
+  }
+
+  .isActive, #nav > div:hover {
+    transform: scale(1.05);
+  }
+
+  #contact:hover::after {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {      /*tab */
+  
+  #nav {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  #nav > div {
+    flex: 1 1 45%;
+    max-width: 45%;
+    text-align: center;
+  }
+
+  .isActive, #nav > div:hover {
+    transform: scale(1.08);
+  }
+
+  #contact:hover::after {
+    font-size: 1.05rem;
+  }
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  #nav {
+    justify-content: space-evenly;
+  }
+
+  #nav > div {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1025px) {          /*large screens */
+  #nav {
+    justify-content: space-between;
+  }
+
+  #nav > div {
+    min-width: 120px;
+    text-align: center;
+  }
 }
