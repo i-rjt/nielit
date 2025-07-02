@@ -48,7 +48,7 @@ function Quizzes(){
 	useEffect(() => {
 		const fetchData = async () => {
 			try{
-				let res = await axios.get('http://localhost:5172/ques');
+				let res = await axios.get('https://srcbay.glitch.me/ques');
 				SetData(res.data);
 				handlequest(res.data);
 			} catch (err){
