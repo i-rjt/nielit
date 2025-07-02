@@ -2,7 +2,7 @@ import {Header} from './components/Home.jsx'
 import {Link, useLocation} from 'react-router-dom'
 import {useEffect, useRef, useState} from 'react'
 import io from 'socket.io-client'
-const socket = io('https://srcbay.glitch.me');
+const socket = io('https://nielit.onrender.com');
 
 export function ChatApp(){
 

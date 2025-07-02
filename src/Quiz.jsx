@@ -48,7 +48,7 @@ function Quizzes(){
 	useEffect(() => {
 		const fetchData = async () => {
 			try{
-				let res = await axios.get('https://srcbay.glitch.me/ques');
+				let res = await axios.get('https://nielit.onrender.com/ques');
 				SetData(res.data);
 				handlequest(res.data);
 			} catch (err){
@@ -57,15 +57,8 @@ function Quizzes(){
 		}
 		fetchData();
 	},[])
-	// console.log(quizSet.question);
-
 	
-
-	console.log('length',quizSet.length)
-	console.log(quesKey)
-
-	console.log(quizSet[quesKey-1]);
-
+	
 function handleClick(index){								//subject navbar
 		NextKey(subjects[index].key);
 	}
