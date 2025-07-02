@@ -1,0 +1,152 @@
+
+#quoteCard{
+	padding: 2.5em;
+	border: 1px solid black;
+	border-radius: 8px;
+	text-align: center;
+	z-index: 0;	
+	color: white;
+	position: relative;
+}
+
+#quoteCard::before {
+	background-image: url("../assets/bg1.png");
+	content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2; 
+  z-index: -1;
+/*  background-clip: content-box;*/
+}
+
+#quoteText{
+/*	z-index: 1;*/
+	color: white;
+}
+
+.bannerTop{
+	display: flex;
+	justify-content: center;
+	margin: 20px 10px 20px 10px;
+	box-shadow: 1px 1px 14px silver;
+}
+
+
+.bannerTop>img{
+	background: linear-gradient(to left, rgba(0,0,0,0.3),rgba(0,0,0,0.2)),url("../assets/bg2.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	box-shadow: 2px 12px 5px var(--base-bg), 2px 3px 6px var(--base-bg),  5px 5px 10px silver;
+	height: 40vh;
+	width: 100vw;
+	margin-right: 40px;
+	border-radius: 8px;
+}
+
+strong,b{
+	font-size: 1.5em;
+}
+
+.quizLinkBanner{
+	display: flex;
+	margin: 30px 20px 30px 20px;
+}
+
+
+#quizBanner{
+			margin-right: 10em;
+			padding: 30px;
+}
+
+.quizLinkBanner>img{
+	background: linear-gradient(to right, rgba(0,0,0,0.2),rgba(0,0,0,0)),url("../assets/bg8.png");
+	background-size: cover;
+/*	background-position: center;*/
+	height: 30vh;
+	width: 50vh;
+	margin-left: 8px;
+	border-radius: 7px 6px;
+}
+
+#quizLinkbtn{
+	background-color: #5E81AC;
+	border: none;
+	border-radius: 7px;
+	padding: 3px;
+	width: 20vw;
+	height: 4vh;
+	margin-top: 7px;
+	color: white;
+}
+
+#quizLinkbtn:hover {
+	border: 1px thin silver;
+	box-shadow: 1px 1px 4px 2px silver;
+	cursor: pointer;
+}
+
+.courseBanner{
+  display: flex;
+  padding: 2em;
+  height: 40vh;
+}
+
+.courselist{
+    width: 40vw;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 6px 7px 4px var(--base-bg),2px 3px 2px var(--base-bg), 7px 9px 5px silver;
+}
+
+#first{
+	background: linear-gradient(to right, rgba(0,0,0,0.2) ,rgba(0,0,0,0)),url("../assets/O.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+#second{
+	background: linear-gradient(to right, rgba(0,0,0,0.2) ,rgba(0,0,0,0)),url("../assets/A.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}#third{
+	background: linear-gradient(to right, rgba(0,0,0,0.2) ,rgba(0,0,0,0)),url("../assets/CCC.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}#fourth{
+	background: linear-gradient(to right, rgba(0,0,0,0.2) ,rgba(0,0,0,0)),url("../assets/CAA.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}#fifth{
+	background: linear-gradient(to right, rgba(0,0,0,0.2) ,rgba(0,0,0,0)),url("../assets/CAI.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}#sixth{
+	background: linear-gradient(to right, rgba(0,0,0,0.2) ,rgba(0,0,0,0)),url("../assets/WEB.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}#seventh{
+	background: linear-gradient(to right, rgba(0,0,0,0.2) ,rgba(0,0,0,0)),url("../assets/B.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}#eighth{
+	background: linear-gradient(to right, rgba(0,0,0,0.2) ,rgba(0,0,0,0)),url("../assets/CYBER.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+
+mark{
+	background-clip: text;
+	background-color: transparent;
+	color: transparent;
+}

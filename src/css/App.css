@@ -1,0 +1,66 @@
+#nav{
+  display: flex;
+}
+
+#nav>div{
+  margin: 5px;
+   padding: 2px;
+}
+
+.isActive{
+  background: var(--link-color);
+/*  box-shadow: 2px 2px 1px transparent, 3px 5px 10px transparent, 2px 2px 5px silver;*/
+  transform: scale(1.1);
+  border-radius: 9px;
+  color: transparent;
+  background-clip: text;
+  text-decoration: none;
+}
+
+.isActive:hover{
+   background: var(--link-color);
+  transform: scale(1.1);
+  border-radius: 9px;
+  color: transparent;
+  background-clip: text;
+}
+
+
+#nav>div:hover{
+  box-shadow: 2px 2px 1px var(--base-bg), 3px 5px 10px silver;
+  border-radius: 9px;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+
+em:hover,a:hover{
+ background: var(--link-color);
+ color: transparent;
+ background-clip: text;
+}
+
+a{
+  color: var(--text-color);
+}
+
+em:hover{
+  background-color: var(--text-color);
+}
+
+#contact{
+    text-decoration: none;
+    position: relative;
+}
+
+#contact::after {
+  content: " \1F3F4\200D\2620"; /*1F451 */
+}
+
+
+#contact:hover::after{
+  font-size: 1.1rem;
+  content: " \1F3F4\200D\2620";
+  color: black;
+  cursor: pointer;
+}

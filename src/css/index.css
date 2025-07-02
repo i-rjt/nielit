@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root{                                                                              /* color schemes to use */
+  --base-bg: #2E3440;
+  --border-blue: #5E81AC;     /* Best for box shadow */
+  --text-color: #D8DEE9;
+  --link-color: linear-gradient(118deg, red,yellow);
+  --font: "Andika";
+  --border-purple: #7A75AF;
+  --btn-bg: rgba(0,0,0,0.3);     /* btn background */
+  --second-bg: #4C566A;         /* chat background */
+  --blue-shade: linear-gradient(117deg, var(--base-bg),var(--second-bg));
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: var(--font);
+
+}
+
+body{
+
+  background-color: var(--base-bg);
+  color: var(--text-color);
+  height: 100%;
+}
+
+header{
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
+  position: sticky;
+  overflow: hidden;
+  background: var(--base-bg);
+  top: 0;
+  z-index: 1;
+  height: 8vh;
+  width: 100vw;
+  box-shadow: 0px 3px 5px silver;
+
+}
+
+main{
+  height: 100%;
+  width: 100%;
+}
+
+footer{
+  position: relative;
+   text-align: center;
+    height: 8vh;
+    width: 100vw;
+}
