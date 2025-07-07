@@ -7,6 +7,7 @@ import './css/Center.css'
 import './css/Chat.css'
 import './css/practice.css'
 import './css/quiz.css'
+import './css/notes.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

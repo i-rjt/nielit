@@ -20,7 +20,7 @@ export function Header(){
       <nav id="nav" role="navigation">
         <div id="home"><NavLink className={(e) => e.isActive ? "isActive" : "" } to="/">Home</NavLink></div>
         <div id="quiz"><NavLink className={(e) => e.isActive ? "isActive" : "" } to="/quiz">Quiz</NavLink></div>
-        <div id="practice"><NavLink className={(e) => e.isActive ? "isActive" : "" } to="/practice">Practice</NavLink></div>
+        <div id="notes"><NavLink className={(e) => e.isActive ? "isActive" : "" } to="/notes">Notes</NavLink></div>
         <div id="chat"><NavLink className={(e) => e.isActive ? "isActive" : "" } to="/chat">Chat</NavLink></div>
       </nav>
       <div className="signup">signup</div>
@@ -206,6 +206,6 @@ function BannerLast(){
 
 export function Footer(){
   return (
-  <><footer ><em>&copy;2025 All Rights Reserved to <mark><a id="contact" href="./contact.jsx">King of Hell</a></mark></em></footer></>
+  <><footer ><em>&copy;2025 All Rights Reserved to <mark><NavLink id="contact" to="/contact">King of Hell</NavLink></mark></em></footer></>
   )
 }

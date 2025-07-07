@@ -1,0 +1,22 @@
+.notesQues{
+	margin: 10px;
+	border: 1px solid var(--base-bg);
+	padding: 10px;
+	border-radius: 5px;
+	background-color: var(--second-bg);
+	color: white;
+	box-shadow: 2px 1px 2px transparent, 2px 2px 1px var(--second-bg), 5px 2px 4px var(--base-bg), 2px 2px 2px var(--base-bg);
+	animation: fade-in 1s ease-in-out;
+}
+
+@keyframes fade-in{
+	0%{
+		opacity: 0;
+	}50%{
+		opacity: 0.5;
+	}100%{
+		opacity: 1;
+	}
+
+}
+
