@@ -69,6 +69,9 @@ em:hover{
 
 
 @media (max-width: 480px) {
+  nav{
+    display: flex;
+  }
 
   #nav > div {
     width: 90%;
@@ -88,12 +91,12 @@ em:hover{
   
   #nav {
     justify-content: center;
-    flex-wrap: wrap;
+/*    flex-wrap: wrap;*/
   }
 
   #nav > div {
-    flex: 1 1 45%;
     max-width: 45%;
+    margin: 10px;
     text-align: center;
   }
 
@@ -109,11 +112,12 @@ em:hover{
 
 @media (min-width: 769px) and (max-width: 1024px) {
   #nav {
-    justify-content: space-evenly;
+    justify-content: space-around;
   }
 
   #nav > div {
     flex: 1 1 auto;
+    margin: 10px;
     text-align: center;
   }
 }

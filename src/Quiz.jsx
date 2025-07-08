@@ -19,19 +19,16 @@ function Quizzes(){
 	const subjects = [
 	 	{
 	 	key: 1,
-	 	name: "Computer Organization"
+	 	name: "CO & OS"
 		 },{
 	 	key: 2,
-	 	name: "Web Design & Development",
+	 	name: "Web Design",
 	 	},{
 	 	key: 3,
-	 	name: "CCC",
+	 	name: "Python",
 	 },{
 	 	key: 4,
-	 	name: "IT Tools",
-	 },{
-	 	key: 5,
-	 	name: "Networking",
+	 	name: "IT-Tools",
 	 },{
 	 	key: 6,
 	 	name: "IoT",
@@ -70,8 +67,7 @@ function handlequest(resdata){
 
 function handleQuizForm(event){
 		event.preventDefault();
-		let formData = new FormData(event.target);
-		
+		let formData = new FormData(event.target);		
 		
 }
 
@@ -92,7 +88,7 @@ function handleQuizForm(event){
 					<div id="quizContainer">
 						<section id="quizSection">
 						<form onSubmit={handleQuizForm}>
-						<ul key={quesKey}>
+						<ul id="questions" key={quesKey}>
 							{
 								quizSet.length != 0 && (
 									<>
@@ -104,8 +100,8 @@ function handleQuizForm(event){
 								)
 							}
 							</ul>
-							<button id="nextBtn" role="button" name="" >Next</button>
-							<button id="resetBtn" role="button" onClick={() => NextQuesKey(0)}>Reset</button>
+							<div id="questionBtn"><button id="nextBtn" role="button" name="" >Next</button>
+							<button id="resetBtn" role="button" onClick={() => NextQuesKey(0)}>Reset</button></div>
 						</form>
 						</section>
 					</div>

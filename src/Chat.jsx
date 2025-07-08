@@ -128,7 +128,6 @@ export function ChatApp(){
   // "Hyperion_Haze"
 // 	]
 
-	let	name;
 
 	const greet = [
   "Hello, ",
