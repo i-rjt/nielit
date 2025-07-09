@@ -34,6 +34,7 @@ function Center(){
   return(
       <>
         <main>
+        <div id="alert"> The quiz Section is now Active</div>
           <Quotes/>
           <BannerTop/>
           <BannerMid/>
@@ -127,7 +128,7 @@ function Quotes(){
       let event = setInterval(() => {
         let random = Math.floor(Math.random() * 70);
        next((prev) => (prev + random) % obj.length)}
-       , 10000);
+       , 6000);
     
         
       return () =>  clearInterval(event);
