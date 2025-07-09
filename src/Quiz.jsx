@@ -1,114 +1,114 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
-import {Header} from './components/Home.jsx';
+import { Header } from './components/Home.jsx';
 
-
-export function QuizPage(){
-	return(
-		<>
-			<Header/>
-
-			<Quizzes/>
-		</>
-		)
+export function QuizPage() {
+  return (
+    <>
+      <Header />
+      <Quizzes />
+    </>
+  );
 }
 
+function Quizzes() {
+  const subjects = [
+    { key: 1, name: "CO & OS" },
+    { key: 2, name: "Web Design" },
+    { key: 3, name: "Python" },
+    { key: 4, name: "IT-Tools" },
+    { key: 6, name: "IoT" },
+  ];
 
-function Quizzes(){
+  const [keyState, setKeyState] = useState(1); // Subject key
+  const [quizSet, NextQuizSet] = useState([]); // Full quiz data
+  const [quizQue, setQuizQue] = useState([]);  // Filtered per subject
+  const [quesKey, setQuesKey] = useState(1); // Question index
+  const [explainState, SetExplainState] = useState(false);
 
-	const subjects = [
-	 	{
-	 	key: 1,
-	 	name: "CO & OS"
-		 },{
-	 	key: 2,
-	 	name: "Web Design",
-	 	},{
-	 	key: 3,
-	 	name: "Python",
-	 },{
-	 	key: 4,
-	 	name: "IT-Tools",
-	 },{
-	 	key: 6,
-	 	name: "IoT",
-	 },];
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        let res = await axios.get('http://localhost:5172/co');
+        NextQuizSet(res.data);
+      } catch (err) {
+        console.error('Some Error occurred in fetching data', err);
+      }
+    };
+    fetchData();
+  }, []);
 
+  useEffect(() => {
+    const filtered = quizSet.filter(q => q.subjectKey === keyState);
+    setQuizQue(filtered);
+    setQuesKey(1);
+  }, [quizSet, keyState]);
 
-	const [keyState, NextKey] = useState(1);		/*Subjects*/
-	const [quesKey,NextQuesKey] = useState(0);
-	const [quizSet,NextQuizSet] = useState([]);
-	const [data,SetData] = useState([]);
-	const [explainState, SetExplainState] = useState(false);
+  const handleClick = (subKey) => {
+    setKeyState(subKey);
+    SetExplainState(false);
+  };
 
-	
-	useEffect(() => {
-		const fetchData = async () => {
-			try{
-				let res = await axios.get('http://localhost:5172/ques');
-				SetData(res.data);
-				handlequest(res.data);
-			} catch (err){
-				console.error('Some Error occurred in fetching data', err);
-  			}
-		}
-		fetchData();
-	},[])
-	
-	
-function handleClick(index){								//subject navbar
-		NextKey(subjects[index].key);
-	}
+  const handleQuizForm = (e) => {
+    e.preventDefault();
+    SetExplainState(true);
+    setTimeout(() => {
+      setQuesKey((prev) =>
+        prev < quizQue.length ? prev + 1 : quizQue.length
+      );
+      SetExplainState(false);
+    }, 2000);
+  };
 
-function handlequest(resdata){
-				NextQuizSet((prev) => [...prev, resdata[quesKey]]);
-				NextQuesKey((prev) => (prev != 51 ? prev + 1 : 0));
-			}
+  const NextQuesKey = () => {
+    setQuesKey(1);
+    SetExplainState(false);
+  };
 
-function handleQuizForm(event){
-		event.preventDefault();
-		let formData = new FormData(event.target);		
-		
+  return (
+    <main id="quizPage">
+      <nav id="sidebar">
+        <aside>
+          <ul>
+            {subjects.map((sub) => (
+              <li
+                key={sub.key}
+                className={sub.key === keyState ? "subactive" : "subName"}
+                onClick={() => handleClick(sub.key)}
+              >
+                {sub.name}
+              </li>
+            ))}
+          </ul>
+        </aside>
+      </nav>
+      <div id="quizContainer">
+        <section id="quizSection">
+          <form onSubmit={handleQuizForm}>
+            <ul id="questions" key={quesKey}>
+              {quizQue.length !== 0 ? (
+                <>
+                  <h3>{quizQue[quesKey - 1]?.question}</h3>
+                  {quizQue[quesKey - 1]?.options?.map((opt, index) => (
+                    <li key={index}>{opt}</li>
+                  ))}
+                  <p className={explainState ? "explain" : "explainNot"}>
+                    {quizQue[quesKey - 1]?.explaination}
+                  </p>
+                </>
+              ) : (
+                <p>No questions found.</p>
+              )}
+            </ul>
+            <div id="questionBtn">
+              <button id="nextBtn" role="button" name="">Next</button>
+              <button id="resetBtn" type="button" role="button" onClick={NextQuesKey}>
+                Reset
+              </button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+  );
 }
-
-
-
-				
-
-	return (
-		<>
-			<main id="quizPage">
-				<nav id="sidebar">
-					<aside>
-						<ul>
-						{subjects.map((sub,index) => <li key={sub.key} className={sub.key == keyState ? "subactive" : "subName"} onClick={() => handleClick(index)}> {sub.name}</li>)}
-						</ul>
-					</aside>
-				</nav>
-					<div id="quizContainer">
-						<section id="quizSection">
-						<form onSubmit={handleQuizForm}>
-						<ul id="questions" key={quesKey}>
-							{
-								quizSet.length != 0 && (
-									<>
-										<h3>{quizSet[quesKey-1].question}</h3>
-										{quizSet[quesKey-1].options.map((opt,index) => (
-											<li key={index} value={opt}>{opt}</li>))}
-										<p className={(explainState) ? "explain" : "explainNot" }> {quizSet[quesKey-1].explaination}</p>
-									</>
-								)
-							}
-							</ul>
-							<div id="questionBtn"><button id="nextBtn" role="button" name="" >Next</button>
-							<button id="resetBtn" role="button" onClick={() => NextQuesKey(0)}>Reset</button></div>
-						</form>
-						</section>
-					</div>
-				</main>
-			
-		</>
-		)
-}
-
-
