@@ -58,7 +58,7 @@ function Quizzes() {
 
   const handlePythonSetClick = async (setNumber) => {
     try {
-      const res = await axios.get(`https://nielit.onrender.com/python/Set${setNumber}`);
+      const res = await axios.get(`https://nielit.onrender.com/python/set${setNumber}`);
       setQuizSet(res.data);
       setSelectedSet(setNumber);
       setQuesKey(1);
