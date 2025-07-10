@@ -41,7 +41,8 @@ function Center(){
   return(
       <>
         <main>
-        <div id="alert"> The quiz Section is now Active</div>
+        <div className="alert"> The quiz Section is now Active!</div>
+        <div className="alert"> You can contact me on-<a href="https://wa.me/7827718387">7827718387</a></div>
           <Quotes/>
           <BannerTop/>
           <BannerMid/>
