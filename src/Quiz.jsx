@@ -38,6 +38,11 @@ function Quizzes() {
         else if (keyState === 2) res = await axios.get('https://nielit.onrender.com/web');
         else if (keyState === 4) res = await axios.get('https://nielit.onrender.com/ittools');
         else if (keyState === 6) res = await axios.get('https://nielit.onrender.com/iot');
+
+        // if (keyState === 1) res = await axios.get('http://localhost:5172/co');
+        // else if (keyState === 2) res = await axios.get('http://localhost:5172/web');
+        // else if (keyState === 4) res = await axios.get('http://localhost:5172/ittools');
+        // else if (keyState === 6) res = await axios.get('http://localhost:5172/iot');
         if (res) setQuizSet(res.data);
       } catch (err) {
         console.error('Error fetching data:', err);
