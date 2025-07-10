@@ -156,7 +156,7 @@ input[type="radio"] {
   background-color: #6c757d;
 }
 
-@media screen and (min-width: 429px) and (max-width: 480px){
+@media screen and (max-width: 480px){
 	#quizPage{
 		display: flex;
 		flex-direction: column;
@@ -211,9 +211,5 @@ input[type="radio"] {
 		height: 10%;
 		font-size: 0.8em;
 	}
-
-}
-
-@media screen and (min-width: 0px) and (max-width: 428px){
 
 }
