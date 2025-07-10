@@ -42,7 +42,7 @@ function Center(){
       <>
         <main>
         <div className="alert"> The quiz Section is now Active!</div>
-        <div className="alert"> Contact - <a ref="https://wa.me/7827718387">7827718387</a></div>
+        <div className="alert"> Contact - <a href="https://wa.me/7827718387">7827718387</a></div>
           <Quotes/>
           <BannerTop/>
           <BannerMid/>
