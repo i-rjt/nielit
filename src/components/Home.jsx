@@ -19,16 +19,16 @@ export function Header(){
       <div id="logo">logo</div>
       <nav id="nav" role="navigation">
       
-        <div id="home"><NavLink className={(e) => e.isActive ? "isActive" : "" } to="http:localhost:5173/">Home</NavLink></div>
+        {/*<div id="home"><NavLink className={(e) => e.isActive ? "isActive" : "" } to="http:localhost:5173/">Home</NavLink></div>
         <div id="quiz"><NavLink className={(e) => e.isActive ? "isActive" : "" } to="http:localhost:5173/quiz">Quiz</NavLink></div>
         <div id="notes"><NavLink className={(e) => e.isActive ? "isActive" : "" } to="http:localhost:5173/notes">Notes</NavLink></div>
         <div id="chat"><NavLink className={(e) => e.isActive ? "isActive" : "" } to="http:localhost:5173/chat">Chat</NavLink></div> 
-
-           {/* <div id="home"><NavLink className={(e) => e.isActive ? "isActive" : "" } to="https:nerdify.srcbay.com/">Home</NavLink></div>
+*/}
+            <div id="home"><NavLink className={(e) => e.isActive ? "isActive" : "" } to="https:nerdify.srcbay.com/">Home</NavLink></div>
         <div id="quiz"><NavLink className={(e) => e.isActive ? "isActive" : "" } to="https:nerdify.srcbay.com/quiz">Quiz</NavLink></div>
         <div id="notes"><NavLink className={(e) => e.isActive ? "isActive" : "" } to="https:nerdify.srcbay.com/notes">Notes</NavLink></div> 
         <div id="chat"><NavLink className={(e) => e.isActive ? "isActive" : "" } to="https:nerdify.srcbay.com/chat">Chat</NavLink></div>
-        */}
+        
       </nav>
       <div className="signup">signup</div>
     </header>
