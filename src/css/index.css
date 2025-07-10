@@ -2,7 +2,7 @@
 
 
 
-#alert{
+.alert{
   background-image: linear-gradient(120deg,cyan,orange);
   background-clip: text;
   color: transparent;
