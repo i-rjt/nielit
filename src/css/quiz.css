@@ -1,215 +1,62 @@
-#quizPage{			/* Main tag/page */
-	height: 90vh;
-	width: 100vw;
-	margin: 10px auto;
-	display: flex;
-	position: fixed;
-}
-
-#sidebar{
-	border: 1px solid var(--border-purple);
-	background-color: var(--chat-bg);
-	border-radius: 7px;
-	padding: 10px;
-	width: 20%;
-	height: 100%;
-	overflow: hidden;
-}
-
-ul>li{
-	margin: 5px;
-}
-
-
-.subName{
-	margin: 10px 0px 10px 0px;
-	border-radius: 8px;
-	padding: 5px;
-	border: 1px solid black;
-	background-color: var(--second-bg);
-	box-shadow: 1px 1px 2px #5E81AC;
-	cursor: pointer;
-}
-
-.subactive{
-	padding: 8px;
-	border-radius: 6px;
-	border: 1px solid black;
-	color: white;
-	background: var(--blue-shade);
-	box-shadow: 4px 1px 2px var(--border-purple), 0px 1px 0px transparent, 0px 1px 0px transparent;
-	transition: background-color 0.4s ease-in;
-}
-	
-.subactive:active{
-	background-color: var(--second-bg);
-}
-
-.subName:hover{
-	transform: scale(101%);
-}
-
-#quizContainer{
-	margin: 5%;
-	width: 100%;
-	height: 60%;
-	padding: 2%;
-	box-shadow: 1px 1px 2px silver, 2px 2px 2px transparent,1px 2px 2px white;
-}
-
-#quizSection h3 {
-  font-size: 1.4rem;
-  color: white;
-  margin-bottom: 20px;
-}
-
-#questions li {
-  padding: 10px 14px;
-  margin-bottom: 10px;
-  background-color: var(--second-bg);
-  border: 1px solid #d1d5db;
-  width: 50%;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-#questions li:hover {
-  background-color: var(--second-bg);
-  border-color: white;
-  width: 50%;
-  color: lightblue;
-  box-shadow: 1px 2px 1px white, 1px 1px 1px transparent;
-}
-
-.setActive {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 0.4rem 0.8rem;
-}
-
-.explain {
-  margin-top: 16px;
-  color: #1f6f78;
-  background-color: lightgreen;
-  padding: 8px;
-  border-left: 4px solid #00b4d8;
-  border-radius: 4px;
-  font-style: italic;
-}
-
-.explainNot {
-  display: none;
-}
-
-#questionBtn {
-  margin-top: 24px;
+#quizPage {
   display: flex;
-  gap: 12px;
+  justify-content: center;
+  align-items: flex-start;
+  height: 90vh;
 }
 
-.correct{
-  color: black;
-  background-color: lightgreen;
-  border-radius: 8px;
-  padding: 0.5rem;
-  margin-bottom: 0.5rem;
+#quizBox {
+  width: 100%;
+  height: 60%;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: transparent;
+  color: white;
 }
 
- .wrong{
-  background-color: orangered;
-  border-radius: 8px;
-  color: black;
-  padding: 0.5rem;
-  margin-bottom: 0.5rem;
+.question {
+  margin-bottom: 15px;
 }
 
-input[type="radio"] {
+.option {
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.option input {
   margin-right: 8px;
 }
 
-
-
-#nextBtn,
-#resetBtn {
-  padding: 10px 20px;
-  background-color: #00b4d8;
-  border: none;
-  border-radius: 6px;
-  color: white;
+.result {
+  margin-top: 10px;
   font-weight: bold;
+}
+
+.result.correct {
+  color: lightgreen;
+}
+
+.result.wrong {
+  color: red;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s;
+  background-color: #38bdf8;
+  font-weight: bold;
 }
 
-#resetBtn {
-  background-color: #adb5bd;
-}
-
-#nextBtn:hover {
-  background-color: #0096c7;
-}
-
-#resetBtn:hover {
-  background-color: #6c757d;
-}
-
-@media screen and (max-width: 480px){
-	#quizPage{
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-	#sidebar{
-		width: 90%;
-		height: 10%;
-		border: none;	
-		text-align: center;	
-	}
-	aside{
-		width: 100%;
-	}
-
-	#sidebar>aside>ul{
-		display: flex;
-		justify-content: space-evenly;
-		align-items: center;
-		width: 100%;
-		height: 100%;
-	}
-	.subName{
-		height: 50%;
-		font-size: 0.8em;
-	}
-	.subactive{
-		border: 1px solid white;
-		font-size: 0.9em;
-		box-shadow: 1px 1px 2px silver, 1px 1px 1px transparent;
-	}
-
-	#quizContainer{
-		width: 90vw;
-		height: 80vh;
-	}
-	#questions>li{
-		width: 90%;
-		font-size: 0.7em;
-		cursor: pointer;
-	}
-	#questions>li:hover{
-		width: 90%;
-		cursor: pointer;
-	}
-
-	#questions>h3{
-		width: 99%;
-		padding: 5px;
-	}
-	#questions>.explain{
-		height: 10%;
-		font-size: 0.8em;
-	}
-
+button:hover {
+  background-color: #0ea5e9;
 }

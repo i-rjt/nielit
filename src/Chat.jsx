@@ -2,8 +2,8 @@ import {Header} from './components/Home.jsx'
 import {Link, useLocation} from 'react-router-dom'
 import {useEffect, useRef, useState} from 'react'
 import io from 'socket.io-client'
-const socket = io('https://nielit.onrender.com');
-// const socket = io('http://localhost:5172');
+//const socket = io('https://nielit.onrender.com');
+ const socket = io('http://localhost:5172');
 
 export function ChatApp(){
 
@@ -129,18 +129,6 @@ export function ChatApp(){
 	]
 
 
-	const greet = [
-  "Hello, ",
-  "Hi there, ",
-  "Greetings, ",
-  "Hey, ",
-  "Good to see you, ",
-  "Welcome, ",
-  "Nice to meet you, ",
-  "Howdy, ",
-  "Salutations, ",
-]
-
 	const randomNumber = Math.floor(Math.random() * 100);
 
  	const location = useLocation();
@@ -161,7 +149,6 @@ export function ChatApp(){
  useEffect(() =>{
  		socket.on('Active',(msg) => {
 					NextState((prev) => [...prev, msg])
-					name=prompt("Enter Your name: ");
 				});
  		window.scrollTo(0, document.body.scrollHeight)
  		 	return () => socket.off('Active');
@@ -192,7 +179,6 @@ export function ChatApp(){
 			<div id="UserName">{name}</div>
 		</section>
 		<section id="chatCenterPage" >
-		<li>{greet[3] + name}</li>
 		<ul id="chats" >{ 
 				items.map((val, index) =>(
 					<li key={index} className="chatSession">{val}</li>))
@@ -202,10 +188,10 @@ export function ChatApp(){
 			<form id="messageForm" onSubmit={handleForm}>
 				<label>
 					<input ref={inputRef} type="text" id="txt" placeholder="Type here...." autoFocus autoComplete="off" />
-				</label>
 					<button role="button" id="sendbtn">
 					Send
 				</button>
+				</label>
 			</form>
 		</div>
 		</section>
